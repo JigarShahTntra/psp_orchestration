@@ -1,0 +1,9 @@
+<h1><%= @psp.name %></h1>
+<p>Type: <%= @psp.psp_type %></p>
+<p>Active: <%= @psp.active %></p>
+<pre>Endpoints: <%= JSON.pretty_generate(@psp.endpoints || {}) %></pre>
+<pre>Auth: <%= JSON.pretty_generate(@psp.auth || {}) %></pre>
+<pre>Credentials: <%= JSON.pretty_generate(@psp.credentials || {}) %></pre>
+<%= link_to "Edit", edit_admin_psp_path(@psp) %> |
+<%= link_to "Back", admin_psps_path %>
+

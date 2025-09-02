@@ -1,0 +1,6 @@
+<h1>Mapping for <%= @psp_mapping.psp&.name %></h1>
+<pre>Request: <%= JSON.pretty_generate(@psp_mapping.request_templates || {}) %></pre>
+<pre>Response: <%= JSON.pretty_generate(@psp_mapping.response_templates || {}) %></pre>
+<%= link_to "Edit", edit_admin_psp_mapping_path(@psp_mapping) %> |
+<%= link_to "Back", admin_psp_mappings_path %>
+

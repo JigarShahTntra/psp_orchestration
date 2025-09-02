@@ -1,0 +1,23 @@
+<h1>PSPs</h1>
+<%= link_to "New PSP", new_admin_psp_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Active</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @psps.each do |psp| %>
+      <tr>
+        <td><%= link_to psp.name, admin_psp_path(psp) %></td>
+        <td><%= psp.psp_type %></td>
+        <td><%= psp.active %></td>
+        <td><%= button_to "Test", test_connection_admin_psp_path(psp), method: :post, form: { data: { turbo: false } } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+

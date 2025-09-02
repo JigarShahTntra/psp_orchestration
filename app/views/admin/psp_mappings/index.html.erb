@@ -1,0 +1,22 @@
+<h1>PSP Mappings</h1>
+<%= link_to "New Mapping", new_admin_psp_mapping_path %>
+<table>
+  <thead>
+    <tr>
+      <th>PSP</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @psp_mappings.each do |m| %>
+      <tr>
+        <td><%= m.psp&.name %></td>
+        <td>
+          <%= link_to "Show", admin_psp_mapping_path(m) %> |
+          <%= link_to "Edit", edit_admin_psp_mapping_path(m) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

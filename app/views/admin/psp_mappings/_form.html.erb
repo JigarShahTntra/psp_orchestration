@@ -1,0 +1,16 @@
+<%= form_with model: [:admin, @psp_mapping] do |f| %>
+  <div>
+    <%= f.label :psp_id %>
+    <%= f.collection_select :psp_id, Psp.all, :id, :name %>
+  </div>
+  <div>
+    <%= f.label :request_templates, "Request Templates (JSON)" %>
+    <%= f.text_area :request_templates, value: @psp_mapping.request_templates.to_json, rows: 10 %>
+  </div>
+  <div>
+    <%= f.label :response_templates, "Response Templates (JSON)" %>
+    <%= f.text_area :response_templates, value: @psp_mapping.response_templates.to_json, rows: 10 %>
+  </div>
+  <%= f.submit %>
+<% end %>
+

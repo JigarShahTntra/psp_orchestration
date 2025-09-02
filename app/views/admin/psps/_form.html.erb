@@ -1,0 +1,28 @@
+<%= form_with model: [:admin, @psp] do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :psp_type %>
+    <%= f.text_field :psp_type %>
+  </div>
+  <div>
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+  <div>
+    <%= f.label :endpoints, "Endpoints (JSON)" %>
+    <%= f.text_area :endpoints, value: @psp.endpoints.to_json, rows: 8 %>
+  </div>
+  <div>
+    <%= f.label :auth, "Auth (JSON)" %>
+    <%= f.text_area :auth, value: @psp.auth.to_json, rows: 6 %>
+  </div>
+  <div>
+    <%= f.label :credentials, "Credentials (JSON)" %>
+    <%= f.text_area :credentials, value: @psp.credentials.to_json, rows: 6 %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
